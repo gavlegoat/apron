@@ -277,7 +277,10 @@ static bool test_fpu(void)
     if (d==dd || d==0.) break;
   }
   /* fails if flush to 0 */
-  if (d!=dd) { fprintf(stderr,"test_fpu failed test #1 after %i iterations\n",i); return false; }
+  if (d!=dd) {
+    //fprintf(stderr,"test_fpu failed test #1 after %i iterations\n",i);
+    return false;
+  }
   /* fails if long double rounding is not towards +oo */
   if (d*0.25!=dd) { fprintf(stderr,"test_fpu failed test #2\n"); return false; }
   /* fails if double rounding is not towards +oo */

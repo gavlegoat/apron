@@ -424,10 +424,12 @@ t1p_t* t1p_meet_tcons_array(ap_manager_t* man, bool destructive, t1p_t* a, ap_tc
 		ap_abstract0_meet_lincons_array(pr->manNS, true, res->abs, &eps_lincons_array);
 		if (ap_abstract0_is_bottom(pr->manNS, res->abs)) {
 		    is_bottom = true;
+        ap_linexpr0_free(linexpr0);
 		    break;
 		}
+	      ap_linexpr0_free(linexpr0);
 	    }
-	    ap_linexpr0_free(linexpr0);
+	    //ap_linexpr0_free(linexpr0);
 	}
 	/* update res->gamma */
 	t1p_update_nsymcons_gamma(pr, res);

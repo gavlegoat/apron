@@ -59,7 +59,7 @@ ap_manager_t* box_manager_alloc(void)
   void** funptr;
 
   if (!ap_fpu_init()) {
-    fprintf(stderr,"box_manager_alloc cannot change the FPU rounding mode\n");
+    //fprintf(stderr,"box_manager_alloc cannot change the FPU rounding mode\n");
   }
 
   itv = box_internal_alloc();
